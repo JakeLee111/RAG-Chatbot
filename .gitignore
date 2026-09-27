@@ -17,3 +17,4 @@ venv/
 # Uploaded Files / PDFs
 pdfs/
 *.pdf
+uploads/
