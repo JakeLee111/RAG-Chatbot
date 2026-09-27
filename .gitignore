@@ -1,0 +1,19 @@
+# Virtual Environments
+venv/
+.venv/
+*.venv
+
+# Environment Variables
+.env
+.env.*
+
+# Python Cache
+**/__pycache__/
+*.pyc
+
+# OS Files
+.DS_Store
+
+# Uploaded Files / PDFs
+pdfs/
+*.pdf

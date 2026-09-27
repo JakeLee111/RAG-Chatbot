@@ -1,0 +1,29 @@
+# Use the modern Docker Compose file format.
+services:
+  # Create one PostgreSQL service with pgvector already installed.
+  postgres:
+    # Use the official pgvector image built on PostgreSQL 16.
+    image: pgvector/pgvector:pg16
+    # Restart the database automatically unless we stop it ourselves.
+    restart: unless-stopped
+    # Set the initial database name, user, and password.
+    environment:
+      POSTGRES_DB: rag
+      POSTGRES_USER: rag
+      POSTGRES_PASSWORD: change-me-local
+    # Expose PostgreSQL to our computer on port 5432.
+    ports:
+      - "5432:5432"
+    # Keep database files even when the container is recreated.
+    volumes:
+      - rag_postgres_data:/var/lib/postgresql/data
+    # Check that PostgreSQL is really accepting connections.
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U rag -d rag"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+# Create the named volume used above.
+volumes:
+  rag_postgres_data:
