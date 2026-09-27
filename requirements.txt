@@ -5,6 +5,6 @@ langchain-google-genai
 langchain-postgres
 pypdf
 python-dotenv
+psycopg[binary]
 fastapi
 uvicorn[standard]
-psycopg[binary]
