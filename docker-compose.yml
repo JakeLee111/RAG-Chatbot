@@ -1,5 +1,21 @@
 # Use the modern Docker Compose file format.
 services:
+  # Create the FastAPI app service.
+  app:
+    build: .
+    container_name: rag-app
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://rag:[REDACTED]@postgres:5432/rag
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./app:/app/app
+      - ./pdfs:/app/pdfs
+    command: uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+
   # Create one PostgreSQL service with pgvector already installed.
   postgres:
     # Use the official pgvector image built on PostgreSQL 16.
@@ -10,10 +26,9 @@ services:
     environment:
       POSTGRES_DB: rag
       POSTGRES_USER: rag
-      POSTGRES_PASSWORD: change-me-local
-    # Expose PostgreSQL to our computer on port 5432.
+      POSTGRES_PASSWORD: Pltl_1997
     ports:
-      - "5432:5432"
+      - "5433:5432"
     # Keep database files even when the container is recreated.
     volumes:
       - rag_postgres_data:/var/lib/postgresql/data
