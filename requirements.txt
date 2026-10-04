@@ -8,3 +8,7 @@ python-dotenv
 psycopg[binary]
 fastapi
 uvicorn[standard]
+pandas
+scikit-learn
+xgboost
+joblib
