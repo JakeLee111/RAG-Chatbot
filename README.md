@@ -2,7 +2,7 @@
 
 A full-stack project that combines a **heart disease prediction model** with a **RAG chatbot**.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Render-blue)]([https://your-app-name.onrender.com](https://rag-chatbot-b3gt.onrender.com))
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Render-blue)](https://rag-chatbot-b3gt.onrender.com)
 
 ## Features
 
