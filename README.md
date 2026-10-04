@@ -1,6 +1,6 @@
 # Heart Health Assistant
 
-A full-stack school project that combines a **heart disease prediction model** with a **RAG chatbot**.
+A full-stack project that combines a **heart disease prediction model** with a **RAG chatbot**.
 
 ## Features
 
