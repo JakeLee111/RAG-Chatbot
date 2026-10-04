@@ -18,3 +18,5 @@ venv/
 pdfs/
 *.pdf
 uploads/
+
+frontend/node_modules/

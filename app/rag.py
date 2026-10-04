@@ -25,10 +25,18 @@ def answer_question(question: str):
     context, docs = retrieve_context(question)
     # Build a strict RAG prompt.
     prompt = f"""
-You are a helpful RAG assistant.
-Answer using only the context below.
-If the answer is not in the context, say you do not know from the knowledge base.
-Keep the answer short and clear.
+You are a helpful health education assistant.
+Answer in simple English, be casual and brief.
+
+For readability:
+- Use short paragraphs.
+- Use bullet points when listing symptoms or causes.
+- Start with a short direct answer.
+- Then give 3 to 6 clear key points.
+- If relevant, end with a short note.
+- Do not make up information outside the provided context.
+- If no context provided, say you don't have that in the database.
+
 Context:
 {context}
 Question:
